@@ -1,0 +1,3 @@
+rootProject.name = 'iHeartCoffee'
+
+include ':app'
