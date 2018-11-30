@@ -1,47 +1,33 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from "react"
-import {Platform, StyleSheet, Text, View} from "react-native"
+import {createLogger} from 'redux-logger'
+import {createStore, applyMiddleware} from "redux"
+import {Provider} from 'react-redux'
+import thunk from 'redux-thunk'
 
-const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-  android: "Double tap R on your keyboard to reload,\n" + "Shake or press menu button for dev menu"
-})
+import {appNavigatorMiddleware} from './src/navigation'
+import AppNavigationWithState from "./src/navigation/ReduxNavigation.react"
+import rootReducer from './src/reducers'
 
-type Props = {}
-export default class App extends Component<Props> {
+const reduxMiddlewares = () => {
+  const applicationMiddlewares = [appNavigatorMiddleware, thunk]
+
+  if (__DEV__)
+    applicationMiddlewares.push(createLogger())
+
+  return applicationMiddlewares
+}
+
+const store = createStore(rootReducer, applyMiddleware(...reduxMiddlewares()))
+
+class Root extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <Provider store={store}>
+        <AppNavigationWithState />
+      </Provider>
     )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
-  }
-})
+export default Root
+
