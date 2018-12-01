@@ -1,7 +1,7 @@
 import {createStackNavigator} from "react-navigation"
 import {createReactNavigationReduxMiddleware} from "react-navigation-redux-helpers"
 
-import Welcome from "../components/Welcome.react"
+import Welcome from "../containers/WelcomeContainer.react"
 
 const AppNavigator = createStackNavigator({
   Home: {

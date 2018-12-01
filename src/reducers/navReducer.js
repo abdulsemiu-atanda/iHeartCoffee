@@ -1,6 +1,6 @@
-import {createNavigationReducer} from 'react-navigation-redux-helpers'
+import {createNavigationReducer} from "react-navigation-redux-helpers"
 
-import AppNavigator from '../navigation'
+import AppNavigator from "../navigation"
 
 const navReducer = createNavigationReducer(AppNavigator)
 
