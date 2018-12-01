@@ -7,8 +7,10 @@ import {affordability} from "../util/helpers"
 import {coffeeSpotStyles} from "../assets/styles"
 import colors from "../assets/colors"
 
-const CoffeeSpotCard = ({image_url, name, price, rating}) => (
-  <TouchableOpacity style={coffeeSpotStyles.container}>
+const CoffeeSpotCard = ({image_url, name, price, rating, viewSpot, ...otherProps}) => (
+  <TouchableOpacity
+    onPress={() => viewSpot({image_url, name, price, rating, ...otherProps})}
+    style={coffeeSpotStyles.container}>
     <Image style={coffeeSpotStyles.image} source={{uri: image_url}} />
     <Text>{name}</Text>
     <View style={coffeeSpotStyles.highlight}>
@@ -34,7 +36,8 @@ CoffeeSpotCard.propTypes = {
   image_url: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.string,
-  rating: PropTypes.number
+  rating: PropTypes.number,
+  viewSpot: PropTypes.func
 }
 
 export default CoffeeSpotCard

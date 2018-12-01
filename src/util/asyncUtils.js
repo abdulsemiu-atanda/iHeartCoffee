@@ -43,7 +43,7 @@ export const asyncRequest = (ACTION_NAME, data, time = 2000) => dispatch => {
 
   // Mock API call with setTimeout
   const promise = new Promise((resolve, reject) => {
-    if (data.fullname && data.fullname.trim() === "") {
+    if (data?.fullname?.trim() === "") {
       reject("please enter a valid name")
     } else {
       setTimeout(() => {

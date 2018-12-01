@@ -2,6 +2,7 @@ import {createStackNavigator} from "react-navigation"
 import {createReactNavigationReduxMiddleware} from "react-navigation-redux-helpers"
 
 import AppHeader from "../components/shared/AppHeader.react"
+import CoffeeSpotContainer from "../containers/CoffeeSpotContainer.react"
 import CoffeeSpotsContainer from "../containers/CoffeeSpotsContainer.react"
 import Welcome from "../containers/WelcomeContainer.react"
 
@@ -12,6 +13,10 @@ const AppNavigator = createStackNavigator({
   },
   Spots: {
     screen: CoffeeSpotsContainer,
+    navigationOptions: {header: AppHeader}
+  },
+  Spot: {
+    screen: CoffeeSpotContainer,
     navigationOptions: {header: AppHeader}
   }
 })

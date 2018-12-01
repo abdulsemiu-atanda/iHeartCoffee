@@ -6,9 +6,9 @@
 export const affordability = price => {
   switch (price.length) {
     case 1:
-      return "Cheap"
+      return "Budget"
     case 2:
-      return "Affordable"
+      return "Bargain"
     case 3:
       return "Premium"
     default:

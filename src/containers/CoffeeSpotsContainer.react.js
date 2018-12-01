@@ -14,6 +14,8 @@ class CoffeeSpotsContainer extends Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 
     this.state = {coffee: props.coffee, dataSource: ds.cloneWithRows(props.coffee.spots)}
+
+    this.viewSpot = this.viewSpot.bind(this)
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -23,6 +25,10 @@ class CoffeeSpotsContainer extends Component {
       return {coffee: prevState.coffee, dataSource: ds.cloneWithRows(nextProps.coffee.spots)}
 
     return null
+  }
+
+  viewSpot(spot) {
+    this.props.navigation.navigate("Spot", {spot})
   }
 
   render() {
@@ -38,7 +44,7 @@ class CoffeeSpotsContainer extends Component {
           </Text>
           <ListView
             dataSource={this.state.dataSource}
-            renderRow={spot => <CoffeeSpotsCard {...spot} />}
+            renderRow={spot => <CoffeeSpotsCard {...spot} viewSpot={this.viewSpot} />}
             enableEmptySections
           />
         </View>
@@ -49,6 +55,7 @@ class CoffeeSpotsContainer extends Component {
 
 CoffeeSpotsContainer.propTypes = {
   coffee: PropTypes.shape({spots: PropTypes.arrayOf(PropTypes.object), loading: PropTypes.bool}),
+  navigation: PropTypes.shape({navigate: PropTypes.func}),
   user: PropTypes.shape({fullname: PropTypes.string})
 }
 

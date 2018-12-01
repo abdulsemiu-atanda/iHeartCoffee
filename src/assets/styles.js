@@ -60,6 +60,15 @@ export const headerStyles = StyleSheet.create({
 })
 
 export const coffeeSpotStyles = StyleSheet.create({
+  contact: {
+    alignSelf: "center",
+    borderRadius: 20,
+    backgroundColor: colors.kindaGreen,
+    height: 40,
+    marginTop: 10,
+    width: 40
+  },
+  contactIcon: {marginLeft: 9, marginTop: 4},
   container: {
     height: height * 0.3,
     marginLeft: 10,
@@ -71,6 +80,10 @@ export const coffeeSpotStyles = StyleSheet.create({
     marginBottom: 10,
     width: width * 0.95
   },
+  infoImage: {
+    height: height * 0.6,
+    width
+  },
   greeting: {
     fontSize: 18,
     fontWeight: "600",
@@ -81,7 +94,54 @@ export const coffeeSpotStyles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between"
   },
+  ranking: {
+    alignItems: "center"
+  },
+  rankingIcon: {
+    marginTop: 5
+  },
+  rankingText: {
+    fontSize: 10,
+    fontWeight: "400"
+  },
   rating: {
     width: width * 0.2
+  },
+  spotDetails: {
+    borderBottomColor: colors.lightCoffee,
+    borderBottomWidth: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    paddingBottom: 7
+  },
+  spotName: {
+    fontSize: 18,
+    fontWeight: "600",
+    marginTop: 15
+  }
+})
+
+export const reviewsStyles = StyleSheet.create({
+  container: {padding: 7},
+  heading: {
+    fontSize: 18,
+    fontWeight: "600"
+  },
+  review: {marginTop: 10},
+  timestamp: {alignSelf: "flex-end", marginTop: 5},
+  user: {
+    flexDirection: "row",
+    marginTop: 10,
+    justifyContent: "flex-start"
+  },
+  userImage: {
+    borderRadius: 30,
+    height: 60,
+    width: 60
+  },
+  username: {
+    fontWeight: "600",
+    marginLeft: 10,
+    marginTop: 25
   }
 })
