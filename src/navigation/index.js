@@ -5,7 +5,8 @@ import Welcome from "../containers/WelcomeContainer.react"
 
 const AppNavigator = createStackNavigator({
   Home: {
-    screen: Welcome
+    screen: Welcome,
+    navigationOptions: {header: null}
   }
 })
 

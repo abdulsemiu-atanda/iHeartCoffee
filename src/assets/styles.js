@@ -43,3 +43,18 @@ export const welcomeStyles = StyleSheet.create({
     marginBottom: 10
   }
 })
+
+export const headerStyles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.lightCoffee,
+    height: height * 0.2,
+    flexDirection: "row",
+    width,
+    justifyContent: "center"
+  },
+  title: {
+    color: colors.coffee,
+    fontWeight: "600",
+    marginTop: 40
+  }
+})
