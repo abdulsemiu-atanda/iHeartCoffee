@@ -2,7 +2,8 @@
   "extends": "eslint:recommended",
   "parser": "babel-eslint",
   "globals": {
-    "__DEV__": true
+    "__DEV__": true,
+    "Promise": true
   },
   "env": {
     "jest": true,

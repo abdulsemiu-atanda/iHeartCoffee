@@ -2,9 +2,10 @@ import React, {Component} from "react"
 import {connect} from "react-redux"
 import PropTypes from "prop-types"
 
+import {ADD_USER, COFFEE_SPOT} from "../actionTypes/userConstants"
+import {asyncRequest} from "../util/asyncUtils"
+import coffeeSpots from "../../private/data/venues-search.json"
 import Welcome from "../components/Welcome.react"
-import {ADD_USER} from "../actionTypes/userConstants"
-import {asyncRequest as addUser} from "../util/asyncUtils"
 
 class WelcomeContainer extends Component {
   constructor(props) {
@@ -30,8 +31,13 @@ class WelcomeContainer extends Component {
    * @param {String} text
    * @returns {void}
    */
-  onSubmit() {
-    this.props.addUser(ADD_USER, this.state.fullname)
+  async onSubmit() {
+    const response = await this.props.asyncRequest(ADD_USER, this.state.fullname)
+
+    if (response) {
+      this.props.asyncRequest(COFFEE_SPOT, coffeeSpots, 4000)
+      this.props.navigation.navigate("Spots")
+    }
   }
 
   render() {
@@ -47,7 +53,8 @@ class WelcomeContainer extends Component {
 }
 
 WelcomeContainer.propTypes = {
-  addUser: PropTypes.func,
+  asyncRequest: PropTypes.func,
+  navigation: PropTypes.shape({navigate: PropTypes.func}),
   user: PropTypes.shape({fullname: PropTypes.string})
 }
 
@@ -55,5 +62,5 @@ const mapStateToProps = ({user}) => ({user})
 
 export default connect(
   mapStateToProps,
-  {addUser}
+  {asyncRequest}
 )(WelcomeContainer)

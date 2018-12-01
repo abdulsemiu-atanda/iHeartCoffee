@@ -47,7 +47,7 @@ export const welcomeStyles = StyleSheet.create({
 export const headerStyles = StyleSheet.create({
   container: {
     backgroundColor: colors.lightCoffee,
-    height: height * 0.2,
+    height: height * 0.1,
     flexDirection: "row",
     width,
     justifyContent: "center"
@@ -56,5 +56,24 @@ export const headerStyles = StyleSheet.create({
     color: colors.coffee,
     fontWeight: "600",
     marginTop: 40
+  }
+})
+
+export const coffeeSpotStyles = StyleSheet.create({
+  container: {
+    height: height * 0.3,
+    marginLeft: 10,
+    marginRight: 10,
+    width: width * 0.95
+  },
+  image: {
+    height: height * 0.18,
+    width: width * 0.95
+  },
+  greeting: {
+    fontSize: 18,
+    fontWeight: "600",
+    marginLeft: 10,
+    marginBottom: 10
   }
 })
