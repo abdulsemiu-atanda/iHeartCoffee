@@ -68,6 +68,7 @@ export const coffeeSpotStyles = StyleSheet.create({
   },
   image: {
     height: height * 0.18,
+    marginBottom: 10,
     width: width * 0.95
   },
   greeting: {
@@ -75,5 +76,12 @@ export const coffeeSpotStyles = StyleSheet.create({
     fontWeight: "600",
     marginLeft: 10,
     marginBottom: 10
+  },
+  highlight: {
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  rating: {
+    width: width * 0.2
   }
 })
