@@ -36,6 +36,8 @@ RCT_REMAP_METHOD(checkPermission, checkPermissionWithResolver:(RCTPromiseResolve
   [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
     if (settings.authorizationStatus != UNAuthorizationStatusAuthorized) {
       resolve(@"permission has not been granted");
+    } else {
+      resolve(@"Permission granted");
     }
   }];
 }
@@ -46,6 +48,9 @@ RCT_EXPORT_METHOD(addEvent:(NSString *)name details:(NSString *)details)
   content.title = name;
   content.body = details;
   content.sound = [UNNotificationSound defaultSound];
+  UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:300
+                                  repeats:NO];
+
     RCTLogInfo(@"Pretending to create an event %@ at %@", name, details);
 }
 

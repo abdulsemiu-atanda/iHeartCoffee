@@ -60,8 +60,12 @@ export const headerStyles = StyleSheet.create({
 })
 
 export const coffeeSpotStyles = StyleSheet.create({
+  action: {
+    flexDirection: "row",
+    marginBottom: 20,
+    justifyContent: "space-around"
+  },
   contact: {
-    alignSelf: "center",
     borderRadius: 20,
     backgroundColor: colors.kindaGreen,
     height: 40,
@@ -106,6 +110,16 @@ export const coffeeSpotStyles = StyleSheet.create({
   },
   rating: {
     width: width * 0.2
+  },
+  reminder: {
+    height: 40,
+    marginTop: 10,
+    width: 45
+  },
+  reminderIcon: {marginLeft: 10},
+  reminderText: {
+    fontSize: 10,
+    textAlign: "center"
   },
   spotDetails: {
     borderBottomColor: colors.lightCoffee,
