@@ -1,7 +1,7 @@
 import {ADD_USER} from "../actionTypes/userConstants"
 import {asyncActionNames} from "../util/asyncUtils"
 
-const initialState = {error: {error: "", status: false}, fullname: "Robot Pike", loading: false}
+const initialState = {error: {message: "", status: false}, fullname: "Robot Pike", loading: false}
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {

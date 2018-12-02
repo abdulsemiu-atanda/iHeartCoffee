@@ -1,7 +1,7 @@
 import {COFFEE_SPOT} from "../actionTypes/userConstants"
 import {asyncActionNames} from "../util/asyncUtils"
 
-const initiallState = {spots: [], loading: false, error: {error: "", status: false}}
+const initiallState = {spots: [], loading: false, error: {message: "", status: false}}
 
 const coffeeSpotsReducer = (state = initiallState, action) => {
   switch (action.type) {

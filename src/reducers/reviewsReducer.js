@@ -1,7 +1,7 @@
 import {COFFEE_SPOT_REVIEWS} from "../actionTypes/userConstants"
 import {asyncActionNames} from "../util/asyncUtils"
 
-const initialState = {spotReviews: {}, loading: false, error: {error: "", status: false}}
+const initialState = {spotReviews: {}, loading: false, error: {message: "", status: false}}
 
 const reviewsReducer = (state = initialState, action) => {
   switch (action.type) {

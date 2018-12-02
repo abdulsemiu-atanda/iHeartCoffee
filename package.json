@@ -33,9 +33,13 @@
     "prettier": "1.15.3",
     "prettier-eslint-cli": "4.7.1",
     "react-test-renderer": "16.6.1",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "sinon": "^7.1.1"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    }
   }
 }
