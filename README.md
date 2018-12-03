@@ -46,7 +46,7 @@ Coffee spots recommendation mobile application
   - Click `Run` and select `Run app` from dropdown.
 
 ## Testing
-Unit Tests for components are setup using Jest and can be ran locally using the command below:
+Unit Tests are setup using Jest and can be ran locally using the command below:
   - `$ yarn test`
 
 ## Project Structure
