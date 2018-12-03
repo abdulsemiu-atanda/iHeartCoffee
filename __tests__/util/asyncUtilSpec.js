@@ -16,15 +16,19 @@ describe("asyncUtils", () => {
     describe.only("loadingAction", () => {
       const loadingAction = asyncActions("FILE").loading(true)
 
-      expect(loadingAction.type).toEqual("FILE_LOADING")
-      expect(loadingAction.data).toBeTruthy()
+      it("returns correct values", () => {
+        expect(loadingAction.type).toEqual("FILE_LOADING")
+        expect(loadingAction.data).toBeTruthy()
+      })
     })
 
     describe.only("successAction", () => {
       const successAction = asyncActions("FILE").success({fullname: "Jane Doe"})
 
-      expect(successAction.type).toEqual("FILE_SUCCESS")
-      expect(successAction.data.fullname).toEqual("Jane Doe")
+      it("returns correct values", () => {
+        expect(successAction.type).toEqual("FILE_SUCCESS")
+        expect(successAction.data.fullname).toEqual("Jane Doe")
+      })
     })
 
     describe.only("failureAction", () => {
