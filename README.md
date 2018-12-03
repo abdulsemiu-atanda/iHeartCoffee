@@ -25,9 +25,8 @@ Coffee spots recommendation mobile application
 ## Installation
 - Ensure you have completed the steps above.
 - Clone this repository.
-- Change your directory with `$ cd DMS-Mobile/`.
+- Change your directory with `$ cd iHeartCoffee/`.
 - Install dependencies with `$ npm i` or `yarn`.
-- Ask a contributor for `settings.json`
 
 ## Usage
 - iOS
