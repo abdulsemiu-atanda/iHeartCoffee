@@ -9,7 +9,7 @@ import {COFFEE_SPOT_REVIEWS} from "../actionTypes/userConstants"
 import {GRANTED, NOT_GRANTED} from "../constants/permissions"
 import venueReviews from "../../private/data/venue-reviews.json"
 
-const {CalendarManager} = NativeModules
+const {NotificationManager} = NativeModules
 
 class CoffeeSpotContainer extends Component {
   constructor(props) {
@@ -41,14 +41,14 @@ class CoffeeSpotContainer extends Component {
   }
 
   addReminderNotification() {
-    CalendarManager.addEvent(
+    NotificationManager.addEvent(
       this.state.spot.name,
       `Don't forget to vist ${this.state.spot.name} soon.`
     )
   }
 
   async setupReminder() {
-    const permissions = await CalendarManager.checkPermission()
+    const permissions = await NotificationManager.checkPermission()
 
     if (permissions === NOT_GRANTED) {
       const response = this.requestNotificationPermission()
@@ -61,7 +61,7 @@ class CoffeeSpotContainer extends Component {
   }
 
   async requestNotificationPermission() {
-    const permissions = await CalendarManager.requestPermission()
+    const permissions = await NotificationManager.requestPermission()
 
     return permissions
   }

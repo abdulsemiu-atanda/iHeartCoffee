@@ -11,7 +11,7 @@
 
 @implementation CalendarManager
 
-RCT_EXPORT_MODULE();
+RCT_EXPORT_MODULE(NotificationManager);
 
 RCT_REMAP_METHOD(requestPermission,
                  requestPermissionWithResolver:(RCTPromiseResolveBlock)resolve
