@@ -34,7 +34,7 @@ Coffee spots recommendation mobile application
   - Start application with `$ react-native run-ios`.
   ### Xcode
   - Open `ios/`
-  - Find and open `dms.xcodproj`.
+  - Find and open `iHeartCoffee.xcodproj`.
   - Click `play` icon in Xcode.
 - Android
   ### React-Native-CLI
